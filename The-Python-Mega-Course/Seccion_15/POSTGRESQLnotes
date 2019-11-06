@@ -1,0 +1,25 @@
+Installing postgresql and psycopg2
+pip install psycopg2
+
+import psycopg2
+
+As we did with sqlite3, we have to create a connection
+which takes some parameters, such as the dbname, username, password, etc.
+con = psycopg2.connect("dbname='database1' user='postgres' password='123456' host='localhost' port='5432'")
+
+Once we have a connection, we create a cursor
+cur = con.cursor()
+
+To create a db we use pgAdmin.
+
+Create table
+cur.execute("CREATE TABLE IF NOT EXISTS store (item TEXT, quantity INT, price REAL)")
+
+Insert
+cur.execute("INSERT INTO store VALUES (%s,%s,%s)" , (item,quantity,price))
+
+Delete
+cur.execute("DELETE FROM store WHERE item=%s",(item,))
+
+Update
+cur.execute("UPDATE store SET quantity=%s, price=%s WHERE item=%s",(quantity, price, item))

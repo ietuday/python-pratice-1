@@ -1,0 +1,16 @@
+To make this application we need the Folium library
+pip install folium
+
+import Folium
+
+Creating a new map
+map = folium.Map(location=[80,-100])
+
+Saving the Map
+map.Save("Map1.html")
+
+Adding zoom to the map.
+map = folium.Map(location=[80,-100], zoom_start=4)
+
+Adding point to maps
+map.add_child(folium.Marker(location=[]))

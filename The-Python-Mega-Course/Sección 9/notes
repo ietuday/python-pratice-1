@@ -1,0 +1,84 @@
+To install pandas we use this on CMD
+'pip install pandas'
+Pandas is use to manage large data sets
+
+
+ we also have to install iptyhon
+ 'pip install ipython'
+
+ To be able to work with excel files we have to install the xlrd library
+ 'pip install xlrd'
+
+ ipython provides better printing of large output.
+ This makes IPython suitable for data analysis as it prints data in a well
+ structured format
+
+ GETTING STARTED WITH PANDAS
+ First we open cmd and execute IPython and then import pandas library.
+
+DataFrame holds data on it.
+Declaring a DataFrame Manually:
+df1 = pandas.DataFrame([[2,4,6],[10,20,30]])
+
+To show the DF we just created, we only call the variable, and we'll get an
+output like this:
+   0  1  2
+0  2  4  6
+1 10 20 30
+
+As we can see, we obtain a table/matrix, with the values we passed before.
+But there are some numbers we didn't passed. Those numbers are rows/columns
+names or indexes. To change this indexes to names, we add another parameter when
+we declare the DataFrame. Example:
+
+df1 = pandas.DataFrame([[2,4,6],[10,20,30]], columns=["price","age","value"])
+And if we print that variable, we'll obtain an output like this:
+
+  Price  Age value
+0     2    4     6
+1    10   20    30
+
+We still have indexes on the table/matrix/DataFrame. To change that, we pass
+another parameter. Example:
+df1 = pandas.DataFrame([[2,4,6],[10,20,30]], columns=["price","age","value"],index=["First", "Second"])
+And if we print that variable, we'll obtain an output like this:
+
+        Price  Age  Value
+First       2    4      6
+Second     10   20     30
+
+We can also pass dictionaries to a DataFrame. Example:
+{"Name":"John", "Surname":"Johnson", "Age":"21"}
+df1= pandas.DataFrame([{"Name":"John", "Surname":"Johnson", "Age":"21"}
+                      ,{"Name":"Jonas", "Surname":"Smith", "Age":"61"}
+                      ,{"Name":"Jake", "Surname":"Bug", "Age":"31"}])
+
+And if we print that variable, we'll obtain an output like this:
+  Age   Name  Surname
+0  21   John  Johnson
+1  61  Jonas    Smith
+2  31   Jake      Bug
+
+As we can see, the ouput was different that the one we expected, this because
+it was ordered alphabetically.
+
+to obtain the average/mean of a DataFrame we use the mean() method
+Example: df.mean()
+we'll get an output like this.
+
+price     6.0
+age      12.0
+value    18.0
+dtype: float64
+
+To get the values of a certain column we call the variable and the column name
+we want to get. For example:
+-df1.price
+
+output:
+        First      2
+        Second    10
+        Name: price, dtype: int64
+This output is a panda.Serie data type object
+
+A DATAFRAME IS MADE OF SERIES

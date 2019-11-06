@@ -1,0 +1,38 @@
+loading an image with cv2 in python
+
+im_g = cv2.imread("name of the image", 0 or 1)
+0 = gray scale
+1 = bgr scale
+
+if we "show" this variable, the output will be an ndarray
+array([[187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182]], dtype=uint8)
+
+if we set 1 instead of 0 we will get a three dimensional array
+array([[[187, 187, 187],
+        [158, 158, 158],
+        [104, 104, 104],
+        [121, 121, 121],
+        [143, 143, 143]],
+
+       [[198, 198, 198],
+        [125, 125, 125],
+        [255, 255, 255],
+        [255, 255, 255],
+        [147, 147, 147]],
+
+       [[209, 209, 209],
+        [134, 134, 134],
+        [255, 255, 255],
+        [ 97,  97,  97],
+        [182, 182, 182]]], dtype=uint8)
+
+As we can see, the image values were transposed
+
+To create an image out of an ndarray we use the imwrite method which has 2 parameters
+a name with an image extension and the second parameter is a ndarray
+
+cv2.imwrite("image.png",im_g)
+
+im_g variable was previously filled up with a ndarray

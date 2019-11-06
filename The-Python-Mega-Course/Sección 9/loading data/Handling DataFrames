@@ -1,0 +1,93 @@
+ Ways of accessing a dataframe.
+ label based indexing
+ Slicing a dataframe
+
+ df.loc[rangeRows,RangeColums]
+ rangeRows = 1:4
+ rangeColums = 3:4
+
+ We will get a "small" dataframe
+
+unlike the slicing string behavior, in this case, the upper limit in the range
+is included
+
+To access a single cell, we use the same syntax but without ranges, just values
+
+we can convert dataframe in lists just by casting it
+
+To access using indexes, we use the iloc method
+
+df.iloc(indexRangeRows, indexRangeColumns)
+In this case, as we are using numbers, we have to remember that this kind
+of ranges are upper-bound exclusive
+
+
+To access by using combined indexes (label and number) we use the ix[] method
+
+df.ix[2,"Name"]
+
+DELETE COLUMNS/ROWS
+To delete a row/column we use the drop() method. This method IS NOT INPLACE
+so if we want to update a dataframe we have to update the variable itself
+
+df = df.drop("columnName",1 or 0)
+1 or 0 argument means what you want to delete.
+  1 = column
+  0 = row
+
+To delete rows based on index we use This
+df.drop(df.index[range],0)
+
+If we want to delete columns base on indexes we use:
+df.drop(df.colums[0:2],1)
+
+ADDING Column/Row
+
+To add a new column we use the following
+df7["Contient"]=df7.shape[0]*["North America"]
+
+Where:
+Continent is the new of the new column
+North America is the value of a cell in the column.
+But, why are we multiplying Nort America df.shape[0] times?
+because if don't, we will get an error due we only are passing one value
+to the column. So we need to pass the exact number of rows.
+
+If we want to get values from a column and add them to the new one we do the
+following:
+
+df["Continent"]=df["Country"]+","+"North America"
+
+For each cell in Continent Column, we will get the value from the same row in the
+country column, and we will add a comma, and the concatenate it with "Nort America"
+
+WHEN ADDING NEW ROWs THINGS GET INTERESTING.
+First we have to transpose the dataframe by using the T method. Is highly recommended
+to save that df transposed in a new variable
+
+df_t = df.T
+
+Now rows are columns and columns are rows.
+Once we've done that, we have to add a new column. Remember that our dataframe
+is transposed, so we are adding a column to then transpose again the dataframe
+thereby new column is a new row
+
+df_t["My Address"]=["My City","My Country",10,7,"My Shop","My State","My Continent"]
+
+As we can see we use the same syntax that the one we used to add column. Actually
+we are adding a column, and passing values.
+
+To finish this, we de-transpose the dataframe into our original variable
+df = df_t.T
+
+And That's it
+
+UPDATE A ROW
+To update a row you have to transpose the main dataframe and select the
+index/header/column you want to update
+df_t["3666 21st ST"]=["My City","My Country",10,7,"My Shop","My State","My Continent"]
+
+de-transpose the dataframe into our original variable
+df = df_t.T
+
+and voila!

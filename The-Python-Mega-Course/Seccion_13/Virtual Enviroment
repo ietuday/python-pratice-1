@@ -1,0 +1,16 @@
+To create a python virtual enviroment we need the virtualenv library
+pip install virtualenv
+
+The virtual enviroment need to be created on the same folder that the one that
+has the website files. (A sibling folder)
+
+Then we created the virtual enviroment:
+python -m venv virtual
+
+once we have python, we have to install flask
+virtual\Scripts\pip install flask
+
+then, execute the webpage script
+virtual\Scripts\python webpage\script1.py
+
+Create virtual enviroment before creating a website

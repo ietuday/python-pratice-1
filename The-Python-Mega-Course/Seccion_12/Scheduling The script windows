@@ -1,0 +1,11 @@
+1.- open Task Scheduler
+2.- Click on create task (On the right)
+3.- Give it a name
+4.- Configure to the OS you have. (At the bottom)
+5.- Check on Run with highest privileges
+6.- click in Triggers
+7.- Click on new and then Begin the task at the Startup. click OK
+8.- Click on Actions and New. Start a program. Look for it and Click OK
+
+NOTE: Is highly recommended to NOT use spaces in folders or files names. To avoid This
+you can use underscore ( _ )

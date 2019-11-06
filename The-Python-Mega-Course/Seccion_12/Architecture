@@ -1,0 +1,2 @@
+This program works with a hosts file, which has the websites we want to block.
+This file(hosts) is located on Windows/system32/drivers/etc

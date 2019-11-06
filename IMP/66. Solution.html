@@ -1,0 +1,31 @@
+<p>One way to do this is to use the <code>read()</code>  method:</p>
+
+<pre class="prettyprint linenums">myfile = open("fruits.txt")
+content = myfile.read()
+myfile.close()
+content = content.splitlines()
+for i in content:
+     print(len(i))</pre>
+
+
+
+
+
+
+
+<p>Another way is to use <code>readlines()</code> :</p>
+
+
+
+<pre class="prettyprint linenums">file = open("fruits.txt")
+content = file.readlines()
+content = [line.strip() for line in content]
+file.close()
+for i in content:
+    print(len(i))</pre>
+
+
+
+
+
+<p><br></p>

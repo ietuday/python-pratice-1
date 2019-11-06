@@ -1,0 +1,37 @@
+INDEXING
+To access a certain columns/rows portion we use the following
+
+im_g = [[187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182]]
+Example: Access the following values: 104, 121
+                                      255, 255
+im_g[0:2,2:4]
+The first parameter is the lists we want to access. We are accessing the first and
+second list, the third one (2) is not included due this notation is upper bound
+exclusive
+
+The second parameter are the columns of the lists we sliced before
+This is the result:
+array([[104, 121],
+       [255, 255]], dtype=uint8)
+
+To access a single value we do as it is a matrix
+im_g[1,2]
+  255
+
+ITERAING
+for i in im_g:
+  print (i)
+
+This one will print all the lists but not the values
+
+To print all the values we can do either of the following codes
+for i in im_g:
+  for j in i:
+    print(j)
+
+Or more simple
+
+for i in im_g.flat:
+  print(i)

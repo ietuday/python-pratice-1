@@ -1,0 +1,74 @@
+To concatenate 2 or more numpy arrays we use the hstack method
+We pass a list or tuple as a parameter. This list/tuple has to contain the arrays
+im_g = [[187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255, 97, 182]]
+
+ims  = numpy.hstack([im_g,im_g])
+array([[187, 158, 104, 121, 143, 187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147, 198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182, 209, 134, 255,  97, 182]], dtype=uint8)
+As we can see the array we horizontally concatenated.
+
+To concatenate them vertically we use the vstack method which is basically
+the same
+
+imv = numpy.vstack([im_g, im_g])
+array([[187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182],
+       [187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182]], dtype=uint8)
+
+SPLITING arrays
+To split horizontally an array we use the hsplit method which has 2 parameters.
+The first one is the arrays we want to divide and the second one is
+the arrays we want to get from that one.
+
+lst = numpy.hsplit(imv,5)
+
+This will divide the columns, not the rows
+[[187]
+ [198]
+ [209]
+ [187]
+ [198]
+ [209]]
+[[158]
+ [125]
+ [134]
+ [158]
+ [125]
+ [134]]
+[[104]
+ [255]
+ [255]
+ [104]
+ [255]
+ [255]]
+[[121]
+ [255]
+ [ 97]
+ [121]
+ [255]
+ [ 97]]
+[[143]
+ [147]
+ [182]
+ [143]
+ [147]
+ [182]]
+ we get 5 arrays
+
+ If we want to do it vertically we use the vsplit method.
+ lst = numpy.vsplit(imv,3)
+
+ [[187 158 104 121 143]
+ [198 125 255 255 147]
+ [209 134 255  97 182]]
+[[187 158 104 121 143]
+ [198 125 255 255 147]
+ [209 134 255  97 182]]
+
+ we get 3 arrays

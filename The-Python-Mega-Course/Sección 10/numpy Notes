@@ -1,0 +1,28 @@
+To work with numpy we have to import the Numpy library
+import Numpy
+
+To create a array with a range we use the arange() method. Inside the
+parenthesis we set the amount of numbers we want. This amount is n-1, because
+it starts from zero
+
+n = numpy.arage(27)
+
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26])
+That will be the output. Even though this may look like a list, is a
+ndarray (n dimensional array) object
+
+Once we have an array, we can re-dimension it by using the reshape(x,y) method,
+where x are rows and y are columns
+
+n.reshape(3,9)
+
+This one is not an IN PLACE method
+
+To convert an existing list into an ndarray we use the asarray(x) method
+where x is the list
+
+numpy.asarray(x)
+
+To work with images we have to install the OpenCV (Computer Vision) Library
+pip install opencv-python

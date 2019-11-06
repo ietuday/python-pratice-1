@@ -1,0 +1,61 @@
+TO use geocoders method we have to install geopy
+pip install geopy
+
+The we have to import Nominatim from Geopy.geocoders
+from geopy.geocoders import Nominatim
+
+then store that object in a variable
+nom = Nominatim()
+
+Now we can use geocode method.
+To use it, we have to pass a string with a valid address (address, city, state and pc)
+
+n = nom.geocode("3995 23rd St, san Francisco, CA 94114")
+Location(3995, 23rd Street, Noe Valley, SF, California, 94114, United States of America,
+(37.7529648, -122.4317141, 0.0))
+This object (n) is a Location object
+geopy.location.Location
+
+To get the latitude we apply the latitude method
+n.latitude
+37.7529648
+
+To get the longitude we apply the longitude method
+n.longitude
+-122.4317141
+
+We have our dataframe with addresses and things like that. Now we want to add
+a new column that contains a location object. to do that we do the following
+
+first we concatenate all the address (address, city, state, country)
+df["Address"]=df["Address"]+", "+df["City"]+", "+df["State"]+", "+df["Country"]
+As we can see, we take the values from the dataframe itself and then we update
+the Address column
+
+Now we have to get the coordinates from each address
+df["Coordinates"] = df["Address"].apply(nom.geocode)
+
+What this line of code does is to apply the geocode method to all of the ROWS
+using the address cells, which are .
+
+Now we have a column with location object. Remember that due is a location object
+we can apply location method such as latitude and longitude
+
+df.Coordinates[0].latitude
+df.Coordinates[0].longitude
+
+What these lines do is to get both latitude and longitude from the first Location
+object in the Coordinates column.
+
+Now we have to get the latitude of all the rows.
+df["Latitude"]=df["Coordinates"].apply(lambda x: x.latitude if x != None else None)
+
+What does this line of code do?
+First we are creating a new column called "Latitude". This column gets the values
+from the Coordinates column when we apply the latitude method. We can see there is
+a lambda expression, this because one of the rows is not a valid value (NONE) so
+we apply a simple if else condition to determinate if the value is not None and
+then return the latitude if not.
+
+Now we want to get the longitude, so we basically do the same:
+df["Longitude"]=df["Coordinates"].apply(lambda x: x.longitude if x != None else None)

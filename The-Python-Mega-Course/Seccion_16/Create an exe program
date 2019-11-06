@@ -1,0 +1,7 @@
+To create an .exe program we need the pyinstaller packager
+pip install pyinstaller
+
+Then we execute it
+pyinstaller --onefile --windowed program.py
+
+some files and folders will be created. our app will be in the dist folder

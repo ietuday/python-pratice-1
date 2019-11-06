@@ -1,0 +1,53 @@
+To obtain the names of all the files and folders use
+import os
+os.listdir()
+
+And with this we won't have to go back to the folder to see the names of the
+files
+
+To open a csv file and storage it in a dataframe we use the following
+import pandas
+df = pandas.read_csv("route or name")
+
+Opening a json file
+df = pandas.read_json("route or name")
+
+opening a excel file
+df = pandas.read_excel("route or name")
+
+  if the excel file has more than one sheet, we add a parameter to indicate
+  which sheet do we want to work with.
+  The sheets have indexes which are from 0 to n
+  df = pandas.read_excel("route or name", sheetname=0)
+
+opening a txt separeted by commas file
+df = pandas.read_csv("route or name")
+  As we can see, this kind of files are readed using the same method as the csv
+  files. In this case, we may indicate which caracter is separating the data. 
+  The separator character by default is the comma (,) but if we have another
+  character we may specified which one, by adding another parameter at the time
+  we are reading the file. Example:
+  df = pandas.read_csv("route or name",sep=";")
+
+opening an online file.
+The only thing we have to change is adding the url to the parameter on the method
+df = pandas.read_csv("http://pythonhow.com/supermarkets.csv")
+
+
+Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+To get the size of out dataframe, we apply the shape method.
+example: (4,5) 4 rows and 5 columns
+
+This method (read_csv) has a header parameter that is set true by default.
+CONSIDERATIONS
+-If our file does not have a header, we will have to set the header parameter
+ to false, thereby the first row will not be treated as a header
+
+-If we have an index column and we want to use it instead of the one python
+ creates, we apply the set_index("column name index") method to our dataframe.
+ Once we've applied the previous method, we just execute that celll. We don't
+ have to show the dataframe by calling it, because this will show the dataframe
+ with the index column that python creates.
+
+-

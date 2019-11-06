@@ -1,0 +1,71 @@
+<p>There's another datatype in Python called a <code>tuple</code> :</p>
+
+<p><code>mytuple = (1, 2, "Three")</code> <br></p>
+
+
+
+
+
+
+
+
+
+<p>It's exactly like a <code>list</code>  except:</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>1. You use round brackets instead of square brackets to define it.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>2. A tuple is not mutable which means you can't append or remove items from tuples, unlike lists. Trying to do append to a tuple would throw an error:<br></p>
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">&gt;&gt;&gt; mytuple = (1, 2, "Three") 
+&gt;&gt;&gt; mytuple.append("Four")
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AttributeError: 'tuple' object has no attribute 'append'</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Tuples are rarely used but if you ever want to have a sequence that you really don't want to be changed, then tuples might be a good idea to use.</p>

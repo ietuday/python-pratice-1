@@ -1,0 +1,3 @@
+a json file starts with curly brackets {} and inside of them there are a
+look-alike python's dictionary structure. we have keys and meanings.
+a key may have more than one meaning

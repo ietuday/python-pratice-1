@@ -1,0 +1,19 @@
+USE JUPYTER FOR DATA ANALYSIS AND DATA VISUALIZATION
+
+Jupyter is used on an explorer, to execute jupyter we open cmd on the
+folder we want to work and we use the 'jupyter notebook' command to open
+it.
+
+to create a new python file we click on 'New' and then on 'Python 3'
+
+Once we create a new python file, a new page will show up and we will be able
+to work in it.
+
+Every cell is like a block of code. we can write several lines of code in a cell
+
+To create a new line on a cell we just press ENTER
+To execute a cell we use CTRL+ENTER
+To create a new cell we use ALT+ENTER
+To delete a cell we use ESC+D+D
+To go to the next cell we use SHIFT+ENTER. This will execute the current cell
+and the will move to the next one.

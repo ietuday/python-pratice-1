@@ -1,0 +1,45 @@
+To develop a GUI we need to import tkinter library
+Python 2: import Tkinter
+Python 3: import tkinter
+
+Import all from tkinter:
+from tkinter import *
+
+Create a window:
+window = Tk()
+
+Widgets are between the creation and the mainloop() method
+Create a Button
+b = Button(window, text="Execute")
+To add a action to a button we define a function that will execute the action.
+def hi():
+  print("Hi!")
+Then we add that function to the Button in the command parameter
+b = Button(window, text="Execute", command=hi)
+
+
+Adding a Widget to the window
+b.pack or b.grid(row=y,column=x, rowspan=z)
+
+Creating an entry
+e = Entry(window)
+
+To get a value from the entry we need to create a variable that will hold that value
+just before we create the Entry Widget. This variable will store the StringVar() method
+e_value = StringVar()
+e       = Entry(window, textvariable=e_value)
+
+To get the value from e_value, we apply the get() method
+Creating a Text widget
+height and width
+t1 = Text(window, height=1, width=20)
+
+To pass a value to a Text widgetwe use the insert method
+t1.insert(END, )
+
+
+
+
+
+
+window.mainloop()
