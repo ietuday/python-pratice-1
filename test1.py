@@ -17,3 +17,20 @@ def calculate_age(year):
     return age
 
 
+for iem in [1, 2, 3]:
+    print(iem)
+
+
+x = 0
+
+while x < 3:
+    print("Smaller")
+    print("Value", x)
+    x = x+1
+
+a = [1, 2, 34, 56, 754]
+b = ['a', 'b', 'c', 'd', 'e']
+
+for i, j in zip(a, b):
+    print(i)
+    print(j)
