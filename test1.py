@@ -1,36 +1,43 @@
-pins = {"Mike": 1234, "Joe": 1111, "Jack": 2222}
-# print(pins.keys())
-# print(pins.items())
-# print(pins.values())
+# pins = {"Mike": 1234, "Joe": 1111, "Jack": 2222}
+# # print(pins.keys())
+# # print(pins.items())
+# # print(pins.values())
 
-# user_input = int(input("Enter a number: "))
-# print(user_input)
+# # user_input = int(input("Enter a number: "))
+# # print(user_input)
 
-# print(len(pins))
-
-
-# Function Example
+# # print(len(pins))
 
 
-def calculate_age(year):
-    age = 2019 - year
-    return age
+# # Function Example
 
 
-for iem in [1, 2, 3]:
-    print(iem)
+# def calculate_age(year):
+#     age = 2019 - year
+#     return age
 
 
-x = 0
+# for iem in [1, 2, 3]:
+#     print(iem)
 
-while x < 3:
-    print("Smaller")
-    print("Value", x)
-    x = x+1
 
-a = [1, 2, 34, 56, 754]
-b = ['a', 'b', 'c', 'd', 'e']
+# x = 0
 
-for i, j in zip(a, b):
-    print(i)
-    print(j)
+# while x < 3:
+#     print("Smaller")
+#     print("Value", x)
+#     x = x+1
+
+# a = [1, 2, 34, 56, 754]
+# b = ['a', 'b', 'c', 'd', 'e']
+
+# for i, j in zip(a, b):
+#     print(i)
+#     print(j)
+
+
+import json
+# help(json.load)
+
+data = json.load(open('data.json'))
+print(data["rain"])
