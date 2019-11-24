@@ -1,0 +1,3 @@
+<p>There's currently a bug with the Nominatim object which we use in the next video. To fix that please change these lines:</p><pre class="prettyprint linenums">from geopy.geocoders import Nominatim
+nom = Nominatim()</pre><p>to these:</p><pre class="prettyprint linenums">from geopy.geocoders import ArcGIS
+nom = ArcGIS()</pre><p>The rest of the code remains the same.</p>
