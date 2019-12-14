@@ -1,3 +1,4 @@
+import cv2
 user_input = float(input("Enter number : "))
 
 if user_input > 100:
@@ -6,3 +7,6 @@ elif user_input == 100:
     print("Equal")
 else:
     print("Smaller")
+
+
+print(cv2)
