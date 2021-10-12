@@ -29,7 +29,7 @@ nbconvert==5.2.1
 nbformat==4.3.0
 notebook==5.0.0
 numpy==1.13.1
-opencv-python==3.2.0.8
+opencv-python==3.4.7.28
 pandas==0.20.3
 pandocfilters==1.4.1
 pexpect==4.2.1
